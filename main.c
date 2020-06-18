@@ -12,8 +12,8 @@ struct Player
 
 int main()
 {
-	struct Player team[20];
-	for (int i = 0; i < 20; i++)
+	struct Player team[19];
+	for (int i = 0; i < 19; i++)
 	{
 		struct Player player;
 		strcpy(player.first, "");
@@ -50,7 +50,7 @@ int main()
 	}
 
 	printf("Player stats - bats, hits, walks, runs, average \n");
-	for (int i = 0; i < 19; i++)
+	for (int i = 0; i < 18; i++)
 	{
 		if (team[i].bats != 0)
 		{
@@ -59,19 +59,19 @@ int main()
 				   team[i].last, team[i].bats, team[i].hits, team[i].walks,
 				   team[i].runs, team[i].average);
 
-			team[19].bats += team[i].bats;
-			team[19].hits += team[i].hits;
-			team[19].runs += team[i].runs;
-			team[19].walks += team[i].walks;
+			team[18].bats += team[i].bats;
+			team[18].hits += team[i].hits;
+			team[18].runs += team[i].runs;
+			team[18].walks += team[i].walks;
 		}
 	}
 
-	team[19].average = team[19].hits / (float)team[19].bats;
+	team[18].average = team[18].hits / (float)team[18].bats;
 
 	printf("Team stats - first, last, bats, hits, walks, runs, average \n");
-	printf("%s %s %u %u %u %u %f\n", team[19].first,
-		   team[19].last, team[19].bats, team[19].hits, team[19].walks,
-		   team[19].runs, team[19].average);
+	printf("%s %s %u %u %u %u %.3f\n", team[18].first,
+		   team[18].last, team[18].bats, team[18].hits, team[18].walks,
+		   team[18].runs, team[18].average);
 
 	fclose(fp);
 
